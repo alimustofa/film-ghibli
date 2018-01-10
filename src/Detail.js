@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Detail extends Component {
   constructor(props) {
@@ -45,9 +46,10 @@ class Detail extends Component {
     }
 
     let renderEl = <h1 align="center">Oops, Data not found</h1>;
+    const urlBack = `${process.env.PUBLIC_URL}/`;
 
     if (state.data) {
-      renderEl = (
+        renderEl = (
         <div className="row">
             <div className="col-md-8" style={{ marginBottom: 10 }}>
                 <div className="card">
@@ -89,7 +91,12 @@ class Detail extends Component {
     }
 
     return (
-      <div>{renderEl}</div>
+      <div>
+        <Link to={urlBack} className='btn btn-primary' style={{ marginBottom: 10 }}>
+            Go Back
+        </Link>
+        {renderEl}
+      </div>
     );
   }
 }
