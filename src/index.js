@@ -11,10 +11,10 @@ import Detail from './Detail';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render((
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
         <Switch>
-        <Route exact path='/' component={App} />
-        <Route path='/film/:id' component={Detail} />
+            <Route exact path='/' component={App} />
+            <Route path='/film/:id' component={Detail} />
         </Switch>
     </Router>
 ), document.getElementById('root'));
