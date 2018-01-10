@@ -50,7 +50,7 @@ class App extends Component {
 
     if (state.data.length) {
       renderEl = state.data.map((d, i) => {
-        const urlDetail = `/film/${d.id}`;
+        const urlDetail = `${process.env.PUBLIC_URL}/film/${d.id}`;
         return (
           <div key={i} className="col-md-3" style={{ marginBottom: 10 }}>
             <div className="card">
