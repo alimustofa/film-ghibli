@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'; 
+import { Link } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -55,11 +56,11 @@ class App extends Component {
             <div className="card">
               <img className="card-img-top" src={require('./img/no-image.jpg')} alt="Card image cap" />
               <div className="card-body">
-                <a href={urlDetail}>
+                <Link to={urlDetail}>
                   <h6 className="card-title">{d.title}</h6>
-                </a>
+                </Link>
                 <p className="card-subtitle mb-2 text-muted">{d.release_date} - {d.director}</p>
-                <a href={urlDetail} className="card-link float-right">Detail</a>
+                <Link to={urlDetail} className="card-link float-right">Detail</Link>
               </div>
             </div>
           </div>);
